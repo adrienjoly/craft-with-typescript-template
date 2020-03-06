@@ -16,3 +16,13 @@ Feature: Infection
     Given Paris with 1 infection
     When Paris is infected
     Then the infection level of Paris is 2
+
+  Scenario: three infections
+    Given Paris with 2 infection
+    When Paris is infected
+    Then the infection level of Paris is 3
+
+  Scenario: four infections
+    Given Paris with 3 infection
+    When Paris is infected
+    Then the infection level of Paris is 3

@@ -3,22 +3,33 @@ const { expect } = require('chai');
 
 // Implem
 
-let infectionLevels = {};
+const OUTBREAK_LEVEL = 3;
 
-function getInfectionLevel(city) {
-  return infectionLevels[city];
+class City {
+  constructor(name, infectionLevel) {
+    this.name = name;
+    this.infectionLevel = infectionLevel;
+  }
+
+  infect() {
+    if (this.infectionLevel < OUTBREAK_LEVEL) {
+      this.infectionLevel++;
+    }
+  }
 }
+
+const cities = {};
 
 // Glue code / steps
 
 Given('{word} with {int} infection', function(city, nbInfections) {
-  infectionLevels[city] = nbInfections;
+  cities[city] = new City(city, nbInfections);
 });
 
 When('{word} is infected', function(city) {
-  infectionLevels[city]++;
+  cities[city].infect();
 });
 
 Then('the infection level of {word} is {int}', function(city, level) {
-  expect(getInfectionLevel(city)).to.equal(level);
+  expect(cities[city].infectionLevel).to.equal(level);
 });
