@@ -1,18 +1,25 @@
+const { City } = require('./City.js');
+
 // TODO: make instances immutable, thanks to a Builder class
 
 class Network {
   constructor() {
-    this.citiesLinkedTo = {};
+    this.cities = {}; // { name -> City object }
+    this.citiesLinkedTo = {}; // { name -> array of city names }
   }
-  addCity(city, connectedCities) {
-    for (const connectedCity of connectedCities) {
-      (this.citiesLinkedTo[city] = this.citiesLinkedTo[city] || []).push(
-        connectedCity
+  addCity(name, connectedCities) {
+    this.cities[name] = new City(name);
+    for (const otherCityName of connectedCities) {
+      (this.citiesLinkedTo[name] = this.citiesLinkedTo[name] || []).push(
+        otherCityName
       );
     }
   }
-  isLinked(city1, city2) {
-    return (this.citiesLinkedTo[city1] || []).includes(city2);
+  getCity(name) {
+    return this.cities[name];
+  }
+  isLinked(cityName1, cityName2) {
+    return (this.citiesLinkedTo[cityName1] || []).includes(cityName2);
   }
 }
 
