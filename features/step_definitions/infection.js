@@ -35,3 +35,10 @@ Then('{word} should have {int} {word} cubes', function(
   const city = this.network.getCity(cityName);
   expect(city.cubes[cubeColor]).to.equal(nbInfections);
 });
+
+Then(/Paris should (not |)have outbreak/, function(not) {
+  // Write code here that turns the phrase above into concrete actions
+  const shouldOutbreak = !not;
+  const city = this.network.getCity('Paris');
+  expect(city.hasOutbreak).to.equal(shouldOutbreak);
+});
