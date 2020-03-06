@@ -24,8 +24,7 @@ Given('{word} has been infected {int} times by {word}', function(
 });
 
 When('{word} is infected by {word}', function(cityName, cubeColor) {
-  const city = this.network.getCity(cityName);
-  city.infect(cubeColor);
+  this.network.infectCity(cityName, cubeColor);
 });
 
 Then('{word} should have {int} {word} cubes', function(
