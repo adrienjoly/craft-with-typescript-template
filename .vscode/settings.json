@@ -1,6 +1,8 @@
 {
+  "cucumberautocomplete.steps": ["./features/step_definitions/*.js"],
+  "cucumberautocomplete.syncfeatures": "./features/*feature",
+  "cucumberautocomplete.strictGherkinCompletion": true,
   "editor.formatOnSave": true,
-  "eslint.autoFixOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   }
