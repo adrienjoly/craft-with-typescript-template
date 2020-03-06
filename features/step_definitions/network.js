@@ -1,19 +1,7 @@
+const { Network } = require('../../src/Network');
+
 const { Given, When, Then } = require('cucumber');
 const { expect } = require('chai');
-
-class Network {
-  constructor() {
-    this.citiesLinkedTo = {};
-  }
-
-  addLink(city1, city2) {
-    (this.citiesLinkedTo[city1] = this.citiesLinkedTo[city1] || []).push(city2);
-  }
-
-  isLinked(city1, city2) {
-    return (this.citiesLinkedTo[city1] || []).includes(city2);
-  }
-}
 
 let southAmericaNetwork;
 
