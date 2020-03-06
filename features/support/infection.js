@@ -11,12 +11,12 @@ function getInfectionLevel(city) {
 
 // Glue code / steps
 
-Given('{word} with no infection', function(city) {
-  infectionLevels[city] = 0;
+Given('{word} with {int} infection', function(city, nbInfections) {
+  infectionLevels[city] = nbInfections;
 });
 
 When('{word} is infected', function(city) {
-  infectionLevels[city] = 1;
+  infectionLevels[city]++;
 });
 
 Then('the infection level of {word} is {int}', function(city, level) {
