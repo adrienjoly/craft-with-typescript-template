@@ -1,28 +1,38 @@
-const { Given, When, Then } = require('cucumber');
-const { expect } = require('chai');
 const { City } = require('./../../src/City.js');
+const { Network } = require('../../src/Network');
+
+const { Given, When, Then, Before } = require('cucumber');
+const { expect } = require('chai');
 
 // Glue code / steps
 
+Before(function() {
+  // default network
+  this.network = new Network();
+  this.network.addCity('Paris', []);
+});
+
 Given('{word} has been infected {int} times by {word}', function(
-  city,
+  cityName,
   nbInfections,
   cubeColor
 ) {
-  this.city = new City(city);
+  const city = this.network.getCity(cityName);
   if (nbInfections > 0) {
-    this.city.infect(cubeColor, nbInfections);
+    city.infect(cubeColor, nbInfections);
   }
 });
 
-When('{word} is infected by {word}', function(city, cubeColor) {
-  this.city.infect(cubeColor);
+When('{word} is infected by {word}', function(cityName, cubeColor) {
+  const city = this.network.getCity(cityName);
+  city.infect(cubeColor);
 });
 
 Then('{word} should have {int} {word} cubes', function(
-  city,
+  cityName,
   nbInfections,
   cubeColor
 ) {
-  expect(this.city.cubes[cubeColor]).to.equal(nbInfections);
+  const city = this.network.getCity(cityName);
+  expect(city.cubes[cubeColor]).to.equal(nbInfections);
 });
