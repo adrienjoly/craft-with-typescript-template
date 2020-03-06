@@ -6,14 +6,25 @@ const cities = {};
 
 // Glue code / steps
 
-Given('{word} with {int} infection', function(city, nbInfections) {
-  cities[city] = new City(city, nbInfections);
+Given('{word} has been infected {int} times by {word}', function(
+  city,
+  nbInfections,
+  cubeColor
+) {
+  cities[city] = new City(city);
+  if (nbInfections > 0) {
+    cities[city].infect(cubeColor, nbInfections);
+  }
 });
 
-When('{word} is infected', function(city) {
-  cities[city].infect();
+When('{word} is infected by {word}', function(city, cubeColor) {
+  cities[city].infect(cubeColor);
 });
 
-Then('the infection level of {word} is {int}', function(city, level) {
-  expect(cities[city].infectionLevel).to.equal(level);
+Then('{word} should have {int} {word} cubes', function(
+  city,
+  nbInfections,
+  cubeColor
+) {
+  expect(cities[city].cubes[cubeColor]).to.equal(nbInfections);
 });

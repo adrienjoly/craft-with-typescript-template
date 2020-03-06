@@ -4,25 +4,25 @@ Feature: Infection
   I want to infect a city
 
   Scenario: no infection
-    Given Paris with 0 infection
-    Then the infection level of Paris is 0
+    Given Paris has been infected 0 times by blue
+    Then Paris should have 0 blue cubes
 
   Scenario: infection
-    Given Paris with 0 infection
-    When Paris is infected
-    Then the infection level of Paris is 1
+    Given Paris has been infected 0 times by blue
+    When Paris is infected by blue
+    Then Paris should have 1 blue cubes
 
   Scenario: two infections
-    Given Paris with 1 infection
-    When Paris is infected
-    Then the infection level of Paris is 2
+    Given Paris has been infected 1 times by blue
+    When Paris is infected by blue
+    Then Paris should have 2 blue cubes
 
   Scenario: three infections
-    Given Paris with 2 infection
-    When Paris is infected
-    Then the infection level of Paris is 3
+    Given Paris has been infected 2 times by blue
+    When Paris is infected by blue
+    Then Paris should have 3 blue cubes
 
   Scenario: four infections
-    Given Paris with 3 infection
-    When Paris is infected
-    Then the infection level of Paris is 3
+    Given Paris has been infected 3 times by blue
+    When Paris is infected by blue
+    Then Paris should have 3 blue cubes

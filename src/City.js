@@ -1,14 +1,16 @@
 const OUTBREAK_LEVEL = 3;
 
 class City {
-  constructor(name, infectionLevel) {
+  constructor(name) {
     this.name = name;
-    this.infectionLevel = infectionLevel;
+    this.cubes = {
+      blue: 0
+    };
   }
 
-  infect() {
-    if (this.infectionLevel < OUTBREAK_LEVEL) {
-      this.infectionLevel++;
+  infect(cubeColor, nbInfections) {
+    if (this.cubes[cubeColor] < OUTBREAK_LEVEL) {
+      this.cubes[cubeColor] += nbInfections || 1;
     }
   }
 }
