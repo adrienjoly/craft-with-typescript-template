@@ -6,3 +6,8 @@ Feature: Infection
   Scenario: no infection
     Given Paris with no infection
     Then the infection level of Paris is 0
+
+  Scenario: infection
+    Given Paris with no infection
+    When Paris is infected
+    Then the infection level of Paris is 1
