@@ -1,3 +1,7 @@
+![Node.js CI](https://github.com/adrienjoly/bdd-example-with-cucumber-and-vscode/workflows/Node.js%20CI/badge.svg)
+
+# BDD Example with Cucumber-js: Pandemic
+
 I'm discovering BDD (Behavior Driven Development) with Benjamin Hugot, using Cucumber/Gherkin and JavaScript.
 
 Topic: implement the "Pandemic" game.
