@@ -8,7 +8,7 @@ const { expect } = require('chai');
 
 Before(function() {
   // default network
-  this.network = new Network();
+  this.network = this.network || new Network();
   this.network.addCity('Paris', []);
 });
 
