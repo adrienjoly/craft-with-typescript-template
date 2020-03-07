@@ -12,4 +12,4 @@ Feature: Cure
   Scenario: Cannot cure a city without corresponding disease
     Given Manilla has been infected 2 times by yellow
     And Brian is in Manilla
-    When Brian cannot cures the red disease
+    When Brian cannot cure the red disease
