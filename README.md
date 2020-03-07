@@ -21,7 +21,7 @@ How to run the tests?
 ```sh
 $ nvm use # to use the version of node.js specified in .nvmrc
 $ npm install
-$ npm test
+$ npm test # or, in vscode, press Ctrl-F5
 ```
 
 You should get:
