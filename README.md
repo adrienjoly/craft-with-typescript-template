@@ -1,10 +1,10 @@
-![Node.js CI](https://github.com/adrienjoly/bdd-example-with-cucumber-and-vscode/workflows/Node.js%20CI/badge.svg)
+![Node.js CI](https://github.com/adrienjoly/craft-with-typescript-template/workflows/Node.js%20CI/badge.svg)
 
 # Template: Craft with TypeScript
 
 A Software Crafter template to write and test clean TypeScript code with Visual Studio Code, BDD style.
 
-This template is based upon a "Pandemic" game implemented during a BDD training (Behavior Driven Development) given by Benjamin Hugot, using Cucumber/Gherkin and JavaScript: [bdd-example-with-cucumber-and-vscode](https://github.com/adrienjoly/bdd-example-with-cucumber-and-vscode).
+This template is based upon a "Pandemic" game implemented during a BDD training (Behavior Driven Development) given by Benjamin Hugot, using Cucumber/Gherkin and JavaScript: [bdd-example-with-cucumber-and-vscode](https://github.com/adrienjoly/bdd-example-with-cucumber-and-vscode/releases/tag/v1.0.0). It's also inspired by [hdorgeval/cucumber7-ts-starter: Starter project to write and debug cucumber-js features in TypeScript language](https://github.com/hdorgeval/cucumber7-ts-starter).
 
 ## How to run tests
 
