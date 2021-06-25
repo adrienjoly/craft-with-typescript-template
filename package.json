@@ -1,7 +1,7 @@
 {
-  "name": "vscode-nodejs-eslint-prettier-ava-boilerplate",
-  "version": "1.0.0",
-  "description": "A starter kit for new node.js projects with modern linting, formatting and testing for Visual Studio Code",
+  "name": "craft-with-typescript-template",
+  "version": "2.0.0",
+  "description": "A Software Crafter template to write and test clean TypeScript code with Visual Studio Code, BDD style.",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/cucumber-js"
@@ -16,7 +16,7 @@
       "prettier"
     ],
     "parserOptions": {
-      "ecmaVersion": 2019
+      "ecmaVersion": 2021
     },
     "rules": {
       "prettier/prettier": "error"
