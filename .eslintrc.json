@@ -5,15 +5,7 @@
     "es6": true,
     "jasmine": true
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
-    "plugin:prettier/recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:import/typescript"
-  ],
+  "extends": ["plugin:prettier/recommended"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2020,
@@ -28,21 +20,7 @@
     "no-console": ["error"],
     "no-debugger": ["error"],
     "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1 }],
-    "semi": ["error", "always"],
-    "import/order": [
-      "error",
-      {
-        "groups": [
-          "index",
-          "sibling",
-          "parent",
-          "internal",
-          "external",
-          "builtin"
-        ]
-      }
-    ],
-    "@typescript-eslint/explicit-function-return-type": "off"
+    "semi": ["error", "always"]
   },
   "settings": {
     "import/extensions": [".js", ".ts"]

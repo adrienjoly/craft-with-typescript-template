@@ -11,7 +11,7 @@ export class City {
   constructor(name: string) {
     this.name = name;
     this.cubes = {
-      blue: 0
+      blue: 0,
     };
     this.hasOutbreak = false;
   }

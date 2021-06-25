@@ -22,7 +22,7 @@ export class Network {
   }
   getConnectedCities(cityName: CityName): City[] {
     return this.citiesLinkedTo[cityName].map(
-      connectedCityName => this.cities[connectedCityName]
+      (connectedCityName) => this.cities[connectedCityName]
     );
   }
   infectCity(name: CityName, cubeColor: Color, nbInfections: number): void {
