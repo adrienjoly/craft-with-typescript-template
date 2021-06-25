@@ -1,7 +1,8 @@
 {
-  "cucumberautocomplete.steps": ["./features/step_definitions/*.js"],
-  "cucumberautocomplete.syncfeatures": "./features/*feature",
+  "cucumberautocomplete.steps": ["step-definitions/**/*.ts"],
+  "cucumberautocomplete.syncfeatures": "./features/**/*.feature",
   "cucumberautocomplete.strictGherkinCompletion": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true

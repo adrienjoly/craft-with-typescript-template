@@ -4,7 +4,7 @@
   "description": "A Software Crafter template to write and test clean TypeScript code with Visual Studio Code, BDD style.",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/cucumber-js"
+    "test": "node ./node_modules/@cucumber/cucumber/bin/cucumber-js features/**/*.feature --require env/set-environment-variables.ts --require world/custom-world.ts --require step-definitions/**/*.ts --require hooks/**/*.ts  --require-module ts-node/register/transpile-only --format-options \"{\\\"snippetInterface\\\": \\\"async-await\\\"}\" --format summary --format @cucumber/pretty-formatter --format cucumber-console-formatter --publish-quiet"
   },
   "author": "Adrien Joly",
   "license": "MIT",
@@ -26,16 +26,22 @@
     }
   },
   "dependencies": {
+    "@cucumber/cucumber": "^7.3.0",
+    "@cucumber/pretty-formatter": "^1.0.0-alpha.0",
+    "@types/node": "^15.12.4",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "chai": "^4.3.4",
+    "cucumber-console-formatter": "^1.0.0",
     "eslint": "^6.7.2",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-prettier": "^3.1.1",
-    "prettier": "^1.19.1"
+    "is-ci": "^3.0.0",
+    "prettier": "^1.19.1",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.4"
   },
   "prettier": {
     "singleQuote": true
-  },
-  "devDependencies": {
-    "chai": "^4.2.0",
-    "cucumber": "^6.0.5"
   }
 }

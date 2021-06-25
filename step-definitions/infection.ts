@@ -1,7 +1,7 @@
-const { City } = require('./../../src/City.js');
-const { Network } = require('../../src/Network');
+const { City } = require('./../src/City.js');
+const { Network } = require('../src/Network');
 
-const { Given, When, Then, Before } = require('cucumber');
+const { Given, When, Then, Before } = require('@cucumber/cucumber');
 const { expect } = require('chai');
 
 // Glue code / steps

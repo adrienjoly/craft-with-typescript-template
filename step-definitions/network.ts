@@ -1,6 +1,6 @@
-const { Network } = require('../../src/Network');
+const { Network } = require('../src/Network');
 
-const { Given, When, Then } = require('cucumber');
+const { Given, When, Then } = require('@cucumber/cucumber');
 const { expect } = require('chai');
 
 Given('the South America Network', function() {
@@ -12,7 +12,7 @@ Given('the South America Network', function() {
 });
 
 Then('the South America Network should have the links:', function(dataTable) {
-  for (row of dataTable.rows()) {
+  for (const row of dataTable.rows()) {
     const [city, connectedCities] = row;
     for (const connectedCity of connectedCities.split(', ')) {
       expect(this.network.isLinked(city, connectedCity)).to.be.true;
