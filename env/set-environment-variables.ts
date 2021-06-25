@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const isCI = require('is-ci');
 
 process.env['--foo'] = 'bar';
