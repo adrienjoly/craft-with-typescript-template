@@ -1,28 +1,31 @@
-const { City } = require('./City.js');
+import { City, CityName, Color } from './City';
 
 // TODO: make instances immutable, thanks to a Builder class
 
-class Network {
+export class Network {
+  private cities: Record<CityName, City>;
+  private citiesLinkedTo: Record<CityName, CityName[]>;
+
   constructor() {
     this.cities = {}; // { name -> City object }
     this.citiesLinkedTo = {}; // { name -> array of city names }
   }
-  addCity(name, connectedCities) {
+  addCity(name: CityName, connectedCities: CityName[]) {
     this.cities[name] = new City(name);
     this.citiesLinkedTo[name] = [];
     for (const otherCityName of connectedCities) {
       this.citiesLinkedTo[name].push(otherCityName);
     }
   }
-  getCity(name) {
+  getCity(name: CityName) {
     return this.cities[name];
   }
-  getConnectedCities(cityName) {
+  getConnectedCities(cityName: CityName) {
     return this.citiesLinkedTo[cityName].map(
       connectedCityName => this.cities[connectedCityName]
     );
   }
-  infectCity(name, cubeColor, nbInfections) {
+  infectCity(name: CityName, cubeColor: Color, nbInfections: number) {
     const city = this.cities[name];
     city.infect(cubeColor, nbInfections);
     if (city.hasOutbreak) {
@@ -33,9 +36,7 @@ class Network {
       }
     }
   }
-  isLinked(cityName1, cityName2) {
+  isLinked(cityName1: CityName, cityName2: CityName) {
     return (this.citiesLinkedTo[cityName1] || []).includes(cityName2);
   }
 }
-
-exports.Network = Network;

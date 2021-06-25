@@ -1,7 +1,14 @@
 const OUTBREAK_LEVEL = 3;
 
-class City {
-  constructor(name) {
+export type CityName = string;
+export type Color = string;
+
+export class City {
+  private name: CityName;
+  private cubes: Record<Color, number>;
+  public hasOutbreak: boolean;
+
+  constructor(name: string) {
     this.name = name;
     this.cubes = {
       blue: 0
@@ -9,7 +16,7 @@ class City {
     this.hasOutbreak = false;
   }
 
-  infect(cubeColor, nbInfections) {
+  infect(cubeColor: Color, nbInfections: number) {
     if (this.cubes[cubeColor] < OUTBREAK_LEVEL) {
       this.cubes[cubeColor] += nbInfections || 1;
     } else {
@@ -17,7 +24,3 @@ class City {
     }
   }
 }
-
-module.exports = {
-  City
-};

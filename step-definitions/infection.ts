@@ -1,8 +1,7 @@
-const { City } = require('./../src/City.js');
-const { Network } = require('../src/Network');
+import { Network } from './../src/Network';
 
-const { Given, When, Then, Before } = require('@cucumber/cucumber');
-const { expect } = require('chai');
+import { Given, When, Then, Before } from '@cucumber/cucumber';
+import { expect } from 'chai';
 
 // Glue code / steps
 
