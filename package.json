@@ -4,28 +4,11 @@
   "description": "A Software Crafter template to write and test clean TypeScript code with Visual Studio Code, BDD style.",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ./ --ext .js,.ts,.tsx --format visualstudio --no-color --max-warnings 10 --report-unused-disable-directives",
+    "lint": "eslint ./ --ext .js,.ts,.tsx --report-unused-disable-directives",
     "test": "node ./node_modules/@cucumber/cucumber/bin/cucumber-js features/**/*.feature --require env/set-environment-variables.ts --require step-definitions/**/*.ts --require hooks/**/*.ts --require-module ts-node/register/transpile-only --format-options \"{\\\"snippetInterface\\\": \\\"async-await\\\"}\" --format summary --format @cucumber/pretty-formatter --format cucumber-console-formatter --publish-quiet"
   },
   "author": "Adrien Joly",
   "license": "MIT",
-  "eslintConfig": {
-    "extends": [
-      "plugin:prettier/recommended"
-    ],
-    "plugins": [
-      "prettier"
-    ],
-    "parserOptions": {
-      "ecmaVersion": 2020
-    },
-    "rules": {
-      "prettier/prettier": "error"
-    },
-    "env": {
-      "node": true
-    }
-  },
   "dependencies": {
     "@cucumber/cucumber": "^7.3.0",
     "@cucumber/pretty-formatter": "^1.0.0-alpha.0",
@@ -37,6 +20,7 @@
     "cucumber-console-formatter": "^1.0.0",
     "eslint": "^6.7.2",
     "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-prettier": "^3.1.1",
     "is-ci": "^3.0.0",
     "prettier": "^1.19.1",
