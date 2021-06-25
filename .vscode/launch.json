@@ -10,29 +10,11 @@
       "request": "launch",
       "protocol": "inspector",
       "console": "integratedTerminal",
-      "name": "Launch Features",
+      "name": "Test Features",
       "stopOnEntry": false,
-      "program": "${workspaceRoot}/node_modules/@cucumber/cucumber/bin/cucumber-js",
-      "args": [
-        "features/**/*.feature",
-        "--require",
-        "world/custom-world.ts",
-        "--require",
-        "step-definitions/**/*.ts",
-        "--require",
-        "hooks/**/*.ts",
-        "--require-module",
-        "ts-node/register/transpile-only",
-        "--format-options",
-        "{\"snippetInterface\": \"async-await\"}",
-        "--format",
-        "summary",
-        "--tags",
-        "@debug",
-        "--publish-quiet"
-      ],
       "cwd": "${workspaceRoot}",
-      "runtimeArgs": ["--nolazy"],
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run-script", "test:features"],
       "sourceMaps": true
     }
   ]
