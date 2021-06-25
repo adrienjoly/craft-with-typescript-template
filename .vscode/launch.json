@@ -16,8 +16,6 @@
       "args": [
         "features/**/*.feature",
         "--require",
-        "env/set-environment-variables.ts",
-        "--require",
         "world/custom-world.ts",
         "--require",
         "step-definitions/**/*.ts",
