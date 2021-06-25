@@ -10,22 +10,22 @@ export class Network {
     this.cities = {}; // { name -> City object }
     this.citiesLinkedTo = {}; // { name -> array of city names }
   }
-  addCity(name: CityName, connectedCities: CityName[]) {
+  addCity(name: CityName, connectedCities: CityName[]): void {
     this.cities[name] = new City(name);
     this.citiesLinkedTo[name] = [];
     for (const otherCityName of connectedCities) {
       this.citiesLinkedTo[name].push(otherCityName);
     }
   }
-  getCity(name: CityName) {
+  getCity(name: CityName): City {
     return this.cities[name];
   }
-  getConnectedCities(cityName: CityName) {
+  getConnectedCities(cityName: CityName): City[] {
     return this.citiesLinkedTo[cityName].map(
       connectedCityName => this.cities[connectedCityName]
     );
   }
-  infectCity(name: CityName, cubeColor: Color, nbInfections: number) {
+  infectCity(name: CityName, cubeColor: Color, nbInfections: number): void {
     const city = this.cities[name];
     city.infect(cubeColor, nbInfections);
     if (city.hasOutbreak) {
@@ -36,7 +36,7 @@ export class Network {
       }
     }
   }
-  isLinked(cityName1: CityName, cityName2: CityName) {
+  isLinked(cityName1: CityName, cityName2: CityName): boolean {
     return (this.citiesLinkedTo[cityName1] || []).includes(cityName2);
   }
 }

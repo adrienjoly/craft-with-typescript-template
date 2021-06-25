@@ -16,7 +16,7 @@ export class City {
     this.hasOutbreak = false;
   }
 
-  infect(cubeColor: Color, nbInfections: number) {
+  infect(cubeColor: Color, nbInfections: number): void {
     if (this.cubes[cubeColor] < OUTBREAK_LEVEL) {
       this.cubes[cubeColor] += nbInfections || 1;
     } else {
