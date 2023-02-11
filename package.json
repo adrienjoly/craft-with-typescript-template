@@ -19,7 +19,7 @@
     "@types/node": "^15.12.4",
     "@typescript-eslint/eslint-plugin": "^4.28.0",
     "@typescript-eslint/parser": "^4.28.0",
-    "ava": "^3.15.0",
+    "ava": "^5.2.0",
     "chai": "^4.3.4",
     "cucumber-console-formatter": "^1.0.0",
     "eslint": "^7.29.0",
